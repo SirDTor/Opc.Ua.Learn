@@ -14,24 +14,28 @@ namespace TreeWorker
         public static async Task Main()
         {
             var inputs = new ObservableCollection<NodeInfo>
-        {
-            new NodeInfo("A.1", "1", ""),
-            new NodeInfo("A.2", "2", ""),
-            new NodeInfo("A.3.B.1", "3", ""),
-            new NodeInfo("A.3.B.2.C.1", "4", ""),
-            new NodeInfo("A.4.D.1.E.1", "5", ""),
-            new NodeInfo("A.4.D.2.F.1", "6", "")
-        };
-            var inp = new ObservableCollection<NodeInfo>();
-            inp = await ReaderCsv.ReadTagsFromFileAsync();
+            {
+                new NodeInfo("A.1", "1", ""),
+                new NodeInfo("A.2", "2", ""),
+                new NodeInfo("A.3.B.1", "3", ""),
+                new NodeInfo("A.3.B.2.C.1", "4", ""),
+                new NodeInfo("A.4.D.1.E.1", "5", ""),
+                new NodeInfo("A.4.D.2.F.1", "6", "")
+            };
+            ObservableCollection<NodeInfo>? inp = await ReaderCsv.ReadTagsFromFileAsync();
+            
             var tree = TreeBuilder.CreateTree(inputs, '.');
+            PrintTree(tree);
+            var fileName1 = @"tree1";
+            TreeVisualizer.TreeVisualizer.CreateTreeImage(tree, fileName1);
+            Console.WriteLine($"Дерево номер 1 сохранено в файл {fileName1}.png в папке с программой \n\n");
+
             var intTree = TreeBuilder.CreateTree(inp, '.');
             PrintTree(intTree);
+            var fileName2 = @"tree2";
+            TreeVisualizer.TreeVisualizer.CreateTreeImage(intTree, fileName2);
 
-            var fileName = @"tree";
-            TreeVisualizer.TreeVisualizer.CreateTreeImage(intTree, fileName);
-
-            Console.WriteLine($"Дерево сохранено в файл {fileName}.png");
+            Console.WriteLine($"Дерево номер 2 сохранено в файл {fileName2}.png в папке с программой");
         }
 
         public static void PrintTree(TreeNode node, string indent = "", bool last = true)
