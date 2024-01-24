@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpcUaProject.Console", "OpcUaProject.Console\OpcUaProject.Console.csproj", "{8C8E8A4C-774C-40E3-A438-A748723436D3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TreeWorker", "TreeWorker\TreeWorker.csproj", "{650C75F3-5758-430F-9BF0-F0253C72A040}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8C8E8A4C-774C-40E3-A438-A748723436D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C8E8A4C-774C-40E3-A438-A748723436D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C8E8A4C-774C-40E3-A438-A748723436D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C8E8A4C-774C-40E3-A438-A748723436D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{650C75F3-5758-430F-9BF0-F0253C72A040}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{650C75F3-5758-430F-9BF0-F0253C72A040}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{650C75F3-5758-430F-9BF0-F0253C72A040}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{650C75F3-5758-430F-9BF0-F0253C72A040}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A2494863-8D22-44C5-8BBB-953250D42F14}
+	EndGlobalSection
+EndGlobal
