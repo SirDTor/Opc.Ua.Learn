@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics;
 using System.IO;
 using System.Text;
-using OpcUaClient;
+using TreeWorker;
 using QuickGraph;
 
 namespace TreeVisualizer

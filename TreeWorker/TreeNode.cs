@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TreeWorker;
 
-namespace OpcUaClient
+namespace TreeWorker
 {
     public class TreeNode
     {
