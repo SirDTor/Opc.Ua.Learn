@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Opc.Ua\Opc.Ua.csproj" />
+    <ProjectReference Include="..\TreeWorker\TreeWorker.csproj" />
   </ItemGroup>
 
 </Project>
