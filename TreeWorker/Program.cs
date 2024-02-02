@@ -26,14 +26,14 @@ namespace TreeWorker
             
             var tree = TreeBuilder.CreateTree(inputs, '.');
             PrintTree(tree);
-            var fileName1 = @"tree1";
-            TreeVisualizer.TreeVisualizer.CreateTreeImage(tree, fileName1);
-            Console.WriteLine($"Дерево номер 1 сохранено в файл {fileName1}.png в папке с программой \n\n");
+            var fileName1 = @"tree1.png";
+            TreeVisualizer.TreeVisualizer.DrawTree(tree, fileName1);
+            Console.WriteLine($"Дерево номер 1 сохранено в файл {fileName1} в папке с программой \n\n");
 
             var intTree = TreeBuilder.CreateTree(inp, '.');
             PrintTree(intTree);
-            var fileName2 = @"tree2";
-            TreeVisualizer.TreeVisualizer.CreateTreeImage(intTree, fileName2);
+            var fileName2 = @"tree2.png";
+            TreeVisualizer.TreeVisualizer.DrawTree(intTree, fileName2);
 
             Console.WriteLine($"Дерево номер 2 сохранено в файл {fileName2}.png в папке с программой");
         }

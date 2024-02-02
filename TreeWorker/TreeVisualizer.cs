@@ -3,6 +3,9 @@ using System.IO;
 using System.Text;
 using TreeWorker;
 using QuickGraph;
+using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
+using System.Drawing;
 
 namespace TreeVisualizer
 {
@@ -48,6 +51,48 @@ namespace TreeVisualizer
 
             // Удаляем временный файл с описанием графа в формате DOT
             File.Delete(fileName + ".dot");
+        }
+
+        public static void DrawTree(TreeNode root, string filename)
+        {
+            int nodeSize = 40;
+            int marginX = 700;
+            int marginY = 30;
+            int levelHeight = 100;
+
+            Bitmap bitmap = new Bitmap(1920, 1080);
+            Graphics graphics = Graphics.FromImage(bitmap);
+            graphics.SmoothingMode = SmoothingMode.HighQuality;
+
+            Font font = new Font("Arial", 10);
+
+            int x = marginX;
+            int y = marginY;
+
+            DrawNode(root, x, y);
+
+            void DrawNode(TreeNode node, int x, int y)
+            {
+                graphics.FillEllipse(Brushes.White, x - nodeSize / 2, y - nodeSize / 2, nodeSize, nodeSize);
+                graphics.DrawEllipse(Pens.Black, x - nodeSize / 2, y - nodeSize / 2, nodeSize, nodeSize);
+                graphics.DrawString(node.Info.Name, font, Brushes.Black, x - 10, y - 10);
+
+                if (node.Children != null)
+                {
+                    int childY = y + levelHeight;
+                    int childCount = node.Children.Count;
+                    int childX = x - ((childCount - 1) * 50) / 2;
+
+                    foreach (var child in node.Children)
+                    {
+                        graphics.DrawLine(Pens.Black, x, y + nodeSize / 2, childX + nodeSize / 2 - 20, childY - nodeSize / 2);
+                        DrawNode(child, childX, childY);
+                        childX += 50;
+                    }
+                }
+            }
+
+            bitmap.Save(filename, ImageFormat.Png);
         }
 
         private static void AddChildNodes(TreeNode tree, string parent, BidirectionalGraph<string, IEdge<string>> graph)
