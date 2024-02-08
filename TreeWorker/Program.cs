@@ -29,6 +29,7 @@ namespace TreeWorker
             var fileName1 = @"tree1.png";
             TreeVisualizer.TreeVisualizer.DrawTree(tree, fileName1);
             Console.WriteLine($"Дерево номер 1 сохранено в файл {fileName1} в папке с программой \n\n");
+            TreeWriter.WriteTreeToFile(tree, "test.txt");
 
             var intTree = TreeBuilder.CreateTree(inp, '.');
             PrintTree(intTree);
